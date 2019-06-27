@@ -10,18 +10,19 @@ public class Petek {
     public int id;
     public String title;
     public String content;
-    public StringBuffer status;
+    public String status;
     public Date myDate;
 
-    public Petek(){}
+    public Petek() {
+    }
+
     public Petek(int i, String title, String content) {
         Log.i("new petek: ", "come on!");
         this.id = i;
         this.title = title;
         this.content = content;
-        this.status = new StringBuffer();
-        this.status.append("Pending");
-        Log.i("status: ",this.status.toString());
+        this.status = "Pending";
+        Log.i("status: ", this.status.toString());
         this.myDate = new Date();
     }
 
@@ -37,9 +38,10 @@ public class Petek {
         id = c.getInt(0);
         title = c.getString(1);
         content = c.getString(2);
+        status = c.getString(3);
     }
 
-    public String getSQLInsertString(){
+    public String getSQLInsertString() {
         return "INSERT INTO " + TABLE_NAME +
                 " (title, content, status, myDate) VALUES('" + title + "','" + content + "','" + status + "','" + myDate + "' )";
     }
@@ -47,16 +49,15 @@ public class Petek {
     public static String SELECT_ALL =
             "SELECT * FROM " + TABLE_NAME;
 
-    public String toString(){
+    public String toString() {
         //Log.i("date: ", DateFormat.format(myDate));
         String response;
-        if(this.status == null)
-        {
+        if (this.status == null) {
             response = "ERROR";
-        }else{
+        } else {
             response = this.status.toString();
         }
-        Log.i("petekstring: ",response);
+        Log.i("petekstring: ", response);
         return id + ", " + title + ", " + content + ". STATUS: " + response;
     }
 }
