@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import static com.example.android_ex4.petek_wall_activity.ADD_PETEK_REQUEST_CODE;
+
 public class editPetek extends AppCompatActivity {
 
     @Override
@@ -26,19 +28,25 @@ public class editPetek extends AppCompatActivity {
                 EditText contentText = (EditText)findViewById(R.id.contentEditText);
                 String titleValue = titleText.getText().toString();
                 String contentValue = contentText.getText().toString();
-                Intent fresh_intent = new Intent(editPetek.this, petek_wall_activity.class);
-                fresh_intent.putExtra("title", titleValue);
-                fresh_intent.putExtra("content", contentValue);
-                startActivity(fresh_intent);
+
+                Intent petekData = new Intent();
+                petekData.putExtra("title", titleValue);
+                petekData.putExtra("content", contentValue);
+                setResult(RESULT_OK, petekData);
+                finish();
+
+                //startActivity(fresh_intent);
             }
         });
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent fresh_intent = new Intent(editPetek.this, petek_wall_activity.class);
-                fresh_intent.putExtra("title", "CANCEL");
-                fresh_intent.putExtra("content", "CANCEL");
-                startActivity(fresh_intent);
+               // Intent fresh_intent = new Intent(editPetek.this, petek_wall_activity.class);
+                //fresh_intent.putExtra("title", "CANCEL");
+               // fresh_intent.putExtra("content", "CANCEL");
+               // startActivity(fresh_intent);
+                setResult(RESULT_CANCELED);
+                finish();
             }
         });
 

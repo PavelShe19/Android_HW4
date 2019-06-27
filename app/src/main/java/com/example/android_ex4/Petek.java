@@ -1,6 +1,7 @@
 package com.example.android_ex4;
 
 import android.database.Cursor;
+import android.text.format.DateFormat;
 import android.util.Log;
 
 import java.util.Date;
@@ -15,7 +16,7 @@ public class Petek {
     public Petek(){}
     public Petek(int i, String title, String content) {
         Log.i("new petek: ", "come on!");
-        this.id = id;
+        this.id = i;
         this.title = title;
         this.content = content;
         this.status = new StringBuffer();
@@ -30,7 +31,7 @@ public class Petek {
                     "title TEXT, " +
                     "content TEXT, " +
                     "status TEXT, " +
-                    "myDate DATE)";
+                    "myDate DATETIME)";
 
     public Petek(Cursor c) {
         id = c.getInt(0);
@@ -47,7 +48,7 @@ public class Petek {
             "SELECT * FROM " + TABLE_NAME;
 
     public String toString(){
-
+        //Log.i("date: ", DateFormat.format(myDate));
         String response;
         if(this.status == null)
         {
