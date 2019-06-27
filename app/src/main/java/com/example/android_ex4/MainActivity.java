@@ -1,6 +1,7 @@
 package com.example.android_ex4;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
 
         if(user.getText().toString().equals("user")&& pass.getText().toString().equals("pass")) {
-            //Intent intent = new Intent(getApplicationContext(),nextScreen.class); //open next screen after successful login
-            //startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), petek_wall_activity.class); //open next screen after successful login
+            startActivity(intent);
         }
         else{
             Toast toast = Toast.makeText(context, "Username or Password are incorrect", 100);
