@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotelMania</string>
+    <string name="title_activity_donation_page">DonationPage</string>
 </resources>

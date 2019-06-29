@@ -19,6 +19,7 @@ public class editPetek extends AppCompatActivity {
         setContentView(R.layout.activity_edit_petek);
 
         Button okButton = (Button) findViewById(R.id.okButton);
+        Button btn_Donation = (Button) findViewById(R.id.btn_Donation);
         Button cancelButton = (Button) findViewById(R.id.cancelButton);
         TextView title = findViewById(R.id.titleEditText);
         TextView content = findViewById(R.id.contentEditText);
@@ -48,6 +49,18 @@ public class editPetek extends AppCompatActivity {
                 //startActivity(fresh_intent);
             }
         });
+
+        btn_Donation.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(editPetek.this,DonationPage.class); //open next screen
+                startActivity(intent);
+            }
+        });
+
+
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

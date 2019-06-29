@@ -66,6 +66,24 @@
         app:layout_constraintTop_toBottomOf="@+id/contentEditText"
         android:layout_marginLeft="8dp" />
 
+    <RelativeLayout
+        android:layout_width="262dp"
+        android:layout_height="87dp"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="654dp">
+
+        <Button
+            android:id="@+id/btn_Donation"
+            android:layout_width="237dp"
+            android:layout_height="48dp"
+            android:text="Donation Page"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="78dp"
+            tools:layout_editor_absoluteY="570dp" />
+
+
+    </RelativeLayout>
+
 
 
 </android.support.constraint.ConstraintLayout>
