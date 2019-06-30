@@ -36,8 +36,8 @@ public class editPetek extends AppCompatActivity {
             public void onClick(View v) {
                 EditText titleText = (EditText) findViewById(R.id.titleEditText);
                 EditText contentText = (EditText) findViewById(R.id.contentEditText);
-                String titleValue = titleText.getText().toString();
-                String contentValue = contentText.getText().toString();
+                String titleValue = titleText.getText().toString(); // getting text from title
+                String contentValue = contentText.getText().toString(); // getting text and converting to string
 
                 Intent petekData = new Intent();
                 petekData.putExtra("title", titleValue);
