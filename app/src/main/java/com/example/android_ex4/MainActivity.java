@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         EditText user = (EditText)findViewById(R.id.username);
         EditText pass = (EditText)findViewById(R.id.password);
 
-        Context context = getApplicationContext();
+        Context context = getApplicationContext(); // gets context
 
         if(user.getText().toString().equals("user")&& pass.getText().toString().equals("pass")) {
             Intent intent = new Intent(getApplicationContext(), petek_wall_activity.class); //open next screen after successful login
